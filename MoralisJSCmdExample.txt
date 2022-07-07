@@ -1,0 +1,37 @@
+// get NFTs for current user on Mainnet
+const userEthNFTs = await Moralis.Web3API.account.getNFTs();
+
+// get testnet NFTs for user
+const testnetNFTs = await Moralis.Web3API.account.getNFTs({ chain: "ropsten" });
+
+// get polygon NFTs for address
+const options = {
+  chain: "polygon",
+  address: "0x75e3e9c92162e62000425c98769965a76c2e387a",
+};
+const polygonNFTs = await Moralis.Web3API.account.getNFTs(options);
+
+
+const options = {
+  address: "0x7de3085b3190b3a787822ee16f23be010f5f8686",
+  token_id: "1",
+  chain: "eth",
+};
+const transfers = await Moralis.Web3API.token.getWalletTokenIdTransfers(
+  options
+)
+
+const options = {
+  address: "0x7de3085b3190b3a787822ee16f23be010f5f8686",
+  token_id: "1",
+  chain: "eth",
+};
+const tokenIdOwners = await Moralis.Web3API.token.getTokenIdOwners(options);
+
+const options = {
+  address: "0x7de3085b3190b3a787822ee16f23be010f5f8686",
+  token_id: "1",
+  chain: "eth",
+};
+const tokenIdMetadata = await Moralis.Web3API.token.getTokenIdMetadata(options);
+
