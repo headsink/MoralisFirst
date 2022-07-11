@@ -22,7 +22,13 @@ async function start()
 
 const KO8NFTs = async () => {await Moralis.Web3API.account.getNFTs(options).then(async (theDatas)=>{
     try{
-        fs.writeFile('data.json',theDatas.result);
+        fs.writeFile('data.json',JSON.stringify(theDatas.result),()=>{
+            try{
+                console.log("success")
+            }catch(error){
+                console.error(error);
+            }
+        });
         console.log("done!");
     }
     catch(error){
