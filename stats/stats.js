@@ -8,6 +8,11 @@ const options = {};
 
 await Moralis.start({ serverUrl: ServerURL, appId: AppID });
 
-const KO8NFTs = Moralis.Web3API.account.getNFTs(options);
+const KO8NFTs = async () => {await Moralis.Web3API.account.getNFTs(options).then(async (theDatas)=>{
+    try{
+        fs.writeFile('data.json',JSON.stringify(theDatas.result))
+    }
+    catch{}
+});}
 
-fs.writeFileSync()
+KO8NFTs();
