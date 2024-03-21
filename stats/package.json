@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "fs": "0.0.1-security",
-    "moralis": "2.11.1"
+    "moralis": "2.25.2"
   }
 }
